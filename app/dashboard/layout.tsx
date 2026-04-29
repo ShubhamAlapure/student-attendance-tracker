@@ -22,7 +22,7 @@ export default async function DashboardLayout({
     .single()
 
   return (
-    <div className="flex min-h-screen bg-muted/30">
+    <div className="flex min-h-screen bg-transparent">
       <DashboardSidebar />
       <div className="flex flex-1 flex-col lg:pl-64">
         <DashboardHeader user={user} profile={profile} />

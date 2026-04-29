@@ -46,8 +46,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ParticlesBackground />
-          {children}
-          {process.env.NODE_ENV === 'production' && <Analytics />}
+          <div className="relative z-10">
+            {children}
+            {process.env.NODE_ENV === 'production' && <Analytics />}
+          </div>
         </ThemeProvider>
       </body>
     </html>
