@@ -154,44 +154,31 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
-              <div className="bg-muted p-8 md:p-12">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      1
+              <div className="relative p-8 md:p-12 bg-background/20 backdrop-blur-sm border-l border-white/10 flex flex-col justify-center">
+                <div className="space-y-4 relative z-10">
+                  {[
+                    { step: "1", title: "Create your account", desc: "Sign up in seconds", color: "from-blue-500 to-cyan-400" },
+                    { step: "2", title: "Add your subjects", desc: "Set up your courses", color: "from-purple-500 to-pink-500" },
+                    { step: "3", title: "Track everything", desc: "Tasks, marks, attendance", color: "from-orange-500 to-red-500" },
+                    { step: "4", title: "Get AI insights", desc: "Improve with predictions", color: "from-emerald-500 to-teal-400" },
+                  ].map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      className="group relative flex items-center gap-5 rounded-2xl border border-border/40 bg-background/40 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-background/60 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:border-white/20 dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
+                    >
+                      <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-white font-bold shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
+                        {/* Soft glow effect behind the number */}
+                        <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.color} opacity-40 blur-md transition-opacity duration-300 group-hover:opacity-100`}></div>
+                        <span className="relative z-10 text-xl">{item.step}</span>
+                      </div>
+                      <div>
+                        <p className="text-lg font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                          {item.title}
+                        </p>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium">Create your account</p>
-                      <p className="text-sm text-muted-foreground">Sign up in seconds</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      2
-                    </div>
-                    <div>
-                      <p className="font-medium">Add your subjects</p>
-                      <p className="text-sm text-muted-foreground">Set up your courses</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      3
-                    </div>
-                    <div>
-                      <p className="font-medium">Track everything</p>
-                      <p className="text-sm text-muted-foreground">Tasks, marks, attendance</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      4
-                    </div>
-                    <div>
-                      <p className="font-medium">Get AI insights</p>
-                      <p className="text-sm text-muted-foreground">Improve with predictions</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
