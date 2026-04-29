@@ -82,7 +82,7 @@ export default function SignUpPage() {
             </CardTitle>
             <CardDescription>
               {isOtpSent 
-                ? `We've sent a 6-digit verification code to ${email}` 
+                ? `We've sent a verification code to ${email}` 
                 : "Start tracking your academic progress today"}
             </CardDescription>
           </div>
@@ -163,11 +163,11 @@ export default function SignUpPage() {
                 <Input
                   id="otp"
                   type="text"
-                  placeholder="Enter 6-digit code"
+                  placeholder="Enter verification code"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
                   required
-                  maxLength={6}
+                  maxLength={8}
                   className="text-center text-lg tracking-widest"
                 />
               </div>
