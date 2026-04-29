@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ParticlesBackground } from '@/components/particles-background'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -50,6 +51,7 @@ export default function RootLayout({
             {children}
             {process.env.NODE_ENV === 'production' && <Analytics />}
           </div>
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>
