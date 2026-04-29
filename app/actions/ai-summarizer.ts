@@ -1,7 +1,7 @@
 "use server"
 
 import { GoogleGenerativeAI } from "@google/generative-ai"
-import pdf from "pdf-parse"
+const pdf = require("pdf-parse")
 
 const apiKey = process.env.GOOGLE_GEMINI_API_KEY
 const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null
