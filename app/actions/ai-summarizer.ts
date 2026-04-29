@@ -32,13 +32,6 @@ export async function generateStudyMaterial(content: string | FormData) {
       throw new Error("No text could be extracted from the input.")
     }
 
-    const model = genAI.getGenerativeModel({ 
-      model: "gemini-1.5-flash",
-      generationConfig: {
-        responseMimeType: "application/json",
-      }
-    })
-
     const prompt = `
       Analyze the following study material and generate:
       1. A concise, professional summary (around 3-4 paragraphs). Use markdown for bullet points or bold text if necessary.
@@ -56,7 +49,22 @@ export async function generateStudyMaterial(content: string | FormData) {
       ${textToAnalyze}
     `
 
-    const result = await model.generateContent(prompt)
+    let result;
+    try {
+      const model = genAI.getGenerativeModel({ 
+        model: "gemini-1.5-flash-latest",
+        generationConfig: {
+          responseMimeType: "application/json",
+        }
+      })
+      result = await model.generateContent(prompt)
+    } catch (primaryError: any) {
+      console.log("Failed with gemini-1.5-flash-latest, falling back to gemini-pro...", primaryError.message)
+      // Fallback to older gemini-pro model
+      const fallbackModel = genAI.getGenerativeModel({ model: "gemini-pro" })
+      result = await fallbackModel.generateContent(prompt)
+    }
+
     const responseText = result.response.text()
     
     // Safely strip markdown code blocks if the model ignored our instructions
