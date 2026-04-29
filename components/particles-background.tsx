@@ -9,6 +9,7 @@ interface Particle {
   vx: number
   vy: number
   radius: number
+  colorRGB: string
 }
 
 export function ParticlesBackground() {
@@ -32,31 +33,32 @@ export function ParticlesBackground() {
       initParticles()
     }
 
+    const googleColors = [
+      "66, 133, 244",  // Blue
+      "234, 67, 53",   // Red
+      "251, 188, 5",   // Yellow
+      "52, 168, 83"    // Green
+    ]
+
     const initParticles = () => {
       particles = []
       // Number of particles depends on screen size
       const numParticles = Math.floor((canvas.width * canvas.height) / 15000)
       for (let i = 0; i < numParticles; i++) {
+        const randomColor = googleColors[Math.floor(Math.random() * googleColors.length)]
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * 1.5,
           vy: (Math.random() - 0.5) * 1.5,
           radius: Math.random() * 2 + 1,
+          colorRGB: randomColor,
         })
       }
     }
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      
-      const isDark = 
-        resolvedTheme === "dark" || 
-        theme === "dark" || 
-        document.documentElement.classList.contains("dark")
-      
-      const particleColor = isDark ? "rgba(255, 255, 255, 0.4)" : "rgba(0, 0, 0, 0.4)"
-      const lineColorBase = isDark ? "rgba(255, 255, 255," : "rgba(0, 0, 0,"
 
       particles.forEach((p, index) => {
         // Move particles
@@ -76,7 +78,7 @@ export function ParticlesBackground() {
         // Draw particle
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = particleColor
+        ctx.fillStyle = `rgba(${p.colorRGB}, 0.8)`
         ctx.fill()
 
         // Connect nearby particles
@@ -90,7 +92,7 @@ export function ParticlesBackground() {
             ctx.beginPath()
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
-            ctx.strokeStyle = `${lineColorBase} ${0.2 * (1 - distance / 120)})`
+            ctx.strokeStyle = `rgba(${p.colorRGB}, ${0.3 * (1 - distance / 120)})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -105,7 +107,7 @@ export function ParticlesBackground() {
           ctx.beginPath()
           ctx.moveTo(p.x, p.y)
           ctx.lineTo(mouse.x, mouse.y)
-          ctx.strokeStyle = `${lineColorBase} ${0.3 * (1 - mouseDistance / 150)})`
+          ctx.strokeStyle = `rgba(${p.colorRGB}, ${0.5 * (1 - mouseDistance / 150)})`
           ctx.lineWidth = 1
           ctx.stroke()
           
