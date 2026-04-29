@@ -33,7 +33,10 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
     setIsGenerating(true)
     try {
       const response = await generateStudyMaterial(inputText)
-      setResult(response)
+      if (!response.success) {
+        throw new Error(response.error)
+      }
+      setResult(response.data)
       setActiveTab("result")
       toast.success("AI Summary & Flashcards generated!")
     } catch (error: any) {
@@ -58,7 +61,10 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
       formData.append("file", file)
       
       const response = await generateStudyMaterial(formData)
-      setResult(response)
+      if (!response.success) {
+        throw new Error(response.error)
+      }
+      setResult(response.data)
       setActiveTab("result")
       toast.success("PDF analyzed and summarized!")
     } catch (error: any) {
