@@ -61,7 +61,7 @@ const features = [
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-transparent">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-white/20 dark:border-white/10 bg-background/40 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">

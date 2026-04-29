@@ -28,7 +28,7 @@ export function DashboardSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 flex-col border-r bg-background lg:flex">
+    <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 flex-col border-r border-white/20 dark:border-white/10 bg-background/40 backdrop-blur-xl lg:flex shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
       <div className="flex h-16 items-center gap-3 border-b px-6">
         <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
           <GraduationCap className="h-5 w-5 text-primary-foreground" />
