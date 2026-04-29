@@ -121,13 +121,19 @@ export default function HomePage() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <Card key={feature.title} className="transition-shadow hover:shadow-lg">
-                <CardHeader>
-                  <div className={`mb-2 inline-flex h-12 w-12 items-center justify-center rounded-lg ${feature.bgColor}`}>
-                    <feature.icon className={`h-6 w-6 ${feature.color}`} />
+              <Card 
+                key={feature.title} 
+                className="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:border-white/20 dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] hover:bg-background/60"
+              >
+                {/* Subtle gradient background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                
+                <CardHeader className="relative z-10">
+                  <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${feature.bgColor} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm`}>
+                    <feature.icon className={`h-7 w-7 ${feature.color}`} />
                   </div>
-                  <CardTitle>{feature.title}</CardTitle>
-                  <CardDescription>{feature.description}</CardDescription>
+                  <CardTitle className="text-xl transition-colors group-hover:text-primary">{feature.title}</CardTitle>
+                  <CardDescription className="text-base">{feature.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
