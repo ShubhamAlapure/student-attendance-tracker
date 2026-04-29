@@ -12,6 +12,7 @@ import {
   Brain,
   GraduationCap,
   Settings,
+  Sparkles,
 } from "lucide-react"
 
 const navItems = [
@@ -22,6 +23,7 @@ const navItems = [
   { href: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/dashboard/predictions", label: "Predictions", icon: Brain },
   { href: "/dashboard/subjects", label: "Subjects", icon: Settings },
+  { href: "/dashboard/ai-summarizer", label: "AI Summarizer", icon: Sparkles },
 ]
 
 export function DashboardSidebar() {
