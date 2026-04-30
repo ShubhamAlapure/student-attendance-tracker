@@ -21,6 +21,10 @@ import {
   Instagram,
   Twitter,
   Github,
+  Users,
+  Building2,
+  Globe,
+  ShieldCheck,
 } from "lucide-react"
 import {
   NavigationMenu,
@@ -185,6 +189,63 @@ export default function HomePage() {
                             </NavigationMenuLink>
                           </li>
                         </ul>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50 transition-colors">
+                    Educators & Enterprise
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="z-[100] bg-popover text-popover-foreground shadow-2xl rounded-xl border">
+                    <div className="grid w-[600px] gap-8 p-6 md:w-[800px] lg:w-[950px] grid-cols-4">
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex flex-col gap-2 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <Users className="h-5 w-5 text-blue-500" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">For Teachers</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Teach smarter and save time with AI educator tools.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex flex-col gap-2 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <Building2 className="h-5 w-5 text-amber-500" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">For Enterprise</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Institution-wide solutions for schools and universities.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex flex-col gap-2 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <Globe className="h-5 w-5 text-emerald-500" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">Our Mission</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Read more about our mission in education.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex flex-col gap-2 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <ShieldCheck className="h-5 w-5 text-purple-500" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">Our Principles</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Learn about our commitment to privacy and ethical AI.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
                       </div>
                     </div>
                   </NavigationMenuContent>
