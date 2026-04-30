@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -82,28 +83,52 @@ export default function HomePage() {
       </header>
 
       <main className="flex-1">
-        <section className="container mx-auto px-4 py-20 text-center">
-          <div className="mx-auto max-w-3xl space-y-6">
+        <section className="container mx-auto px-4 py-20 text-center relative lg:py-32 overflow-hidden lg:overflow-visible">
+          {/* Floating Image 1 */}
+          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-56 h-64 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 rotate-3">
+            <Image src="/images/float1.png" alt="Student" fill className="object-cover" />
+            <div className="absolute top-4 left-4 bg-blue-500 rounded-lg p-2 shadow-lg">
+              <CheckSquare className="h-5 w-5 text-white" />
+            </div>
+          </div>
+
+          {/* Floating Image 2 */}
+          <div className="absolute top-20 -right-20 hidden xl:block animate-float-delayed w-64 h-72 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 -rotate-3">
+            <Image src="/images/float2.png" alt="Collaboration" fill className="object-cover" />
+            <div className="absolute bottom-6 right-6 bg-emerald-500 rounded-lg p-2 shadow-lg">
+              <TrendingUp className="h-5 w-5 text-white" />
+            </div>
+          </div>
+
+          {/* Floating Image 3 */}
+          <div className="absolute -bottom-10 right-1/4 hidden xl:block animate-float-slow w-48 h-56 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 rotate-12">
+            <Image src="/images/float3.png" alt="Dashboard" fill className="object-cover" />
+            <div className="absolute top-1/2 -left-4 bg-pink-500 rounded-full p-3 shadow-lg">
+              <Sparkles className="h-6 w-6 text-white" />
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-3xl space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-1.5 text-sm">
               <Brain className="h-4 w-4" />
               <span>AI-Powered Academic Tracking</span>
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance">
               Track Your Academic Journey with{" "}
-              <span className="text-primary">Intelligence</span>
+              <span className="text-primary underline decoration-emerald-500/30 decoration-4 underline-offset-8">Intelligence</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
               Manage tasks, track grades, monitor attendance, and get AI-powered predictions
               to improve your academic performance. Built for students who want to excel.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="rounded-full px-8 shadow-lg shadow-primary/20">
                 <Link href="/auth/sign-up">
                   Start Free
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="rounded-full px-8 backdrop-blur-sm">
                 <Link href="/auth/login">Sign In</Link>
               </Button>
             </div>
