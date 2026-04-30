@@ -29,6 +29,7 @@ import {
   MessageSquare,
   Play,
   PartyPopper,
+  X,
 } from "lucide-react"
 import {
   NavigationMenu,
@@ -556,6 +557,132 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Section */}
+        <section className="container mx-auto px-4 py-24 border-t border-white/10">
+          <div className="text-center space-y-4 mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Why Our AI Study Tool Outperforms Traditional Methods
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Experience the advantages of AI-powered studying compared to conventional methods. Our approach is designed to save you time and boost retention.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto relative">
+            {/* Background Glow for Highlighted Column */}
+            <div className="absolute left-1/2 -translate-x-1/2 inset-y-0 w-full md:w-1/3 bg-orange-600/5 blur-[100px] pointer-events-none" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative z-10 items-stretch">
+              {/* Labels Column */}
+              <div className="hidden md:flex flex-col justify-around py-20 text-lg font-bold text-muted-foreground pr-8">
+                <div className="h-40 flex items-center">Evidence-Based Techniques vs. Conventional Learning</div>
+                <div className="h-40 flex items-center">Speed and Personalization at Your Fingertips</div>
+                <div className="h-40 flex items-center">Cost-Effectiveness and Convenience</div>
+              </div>
+
+              {/* StudyTracker AI Column (Highlighted) */}
+              <div className="relative rounded-[2rem] border border-orange-500/20 bg-gradient-to-b from-orange-500/[0.08] to-transparent p-8 md:p-12 shadow-2xl">
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl font-black text-orange-500 uppercase tracking-widest">StudyTracker AI</h3>
+                </div>
+                
+                <div className="space-y-20">
+                  <div className="space-y-4">
+                    <div className="md:hidden font-bold text-orange-500 mb-2">Evidence-Based Techniques</div>
+                    {[
+                      "Active recall techniques built-in",
+                      "Spaced repetition algorithms",
+                      "Real-time feedback and insights"
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckSquare className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
+                        <span className="text-sm font-semibold">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="md:hidden font-bold text-orange-500 mb-2">Speed and Personalization</div>
+                    {[
+                      "Instant AI-generated study materials",
+                      "Personalized learning experience",
+                      "Adaptive content based on progress"
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckSquare className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
+                        <span className="text-sm font-semibold">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="md:hidden font-bold text-orange-500 mb-2">Cost-Effectiveness</div>
+                    {[
+                      "Affordable subscription with all features",
+                      "All-in-one study platform",
+                      "Available 24/7, study anywhere"
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckSquare className="h-5 w-5 text-orange-500 mt-0.5 shrink-0" />
+                        <span className="text-sm font-semibold">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Traditional Methods Column */}
+              <div className="flex flex-col justify-around py-12 md:py-20 md:pl-12 space-y-20 md:space-y-0">
+                <div className="md:hidden text-center mb-4">
+                  <h3 className="text-xl font-bold text-muted-foreground uppercase tracking-widest">Traditional Methods</h3>
+                </div>
+                
+                <div className="space-y-4 opacity-40">
+                  <div className="md:hidden font-bold mb-2">Conventional Learning</div>
+                  {[
+                    "Passive reading and highlighting",
+                    "Repetitive reviewing without feedback",
+                    "Inefficient time allocation"
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <X className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" />
+                      <span className="text-sm">{text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-4 opacity-40">
+                  <div className="md:hidden font-bold mb-2">Manual Methods</div>
+                  {[
+                    "Hours spent creating manual study materials",
+                    "One-size-fits-all approach",
+                    "Limited ability to adapt to your needs"
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <X className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" />
+                      <span className="text-sm">{text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-4 opacity-40">
+                  <div className="md:hidden font-bold mb-2">Convenience Issues</div>
+                  {[
+                    "Expensive private tutors ($50-100/hr)",
+                    "Multiple tools and subscriptions",
+                    "Limited availability and scheduling issues"
+                  ].map((text, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <X className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" />
+                      <span className="text-sm">{text}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
