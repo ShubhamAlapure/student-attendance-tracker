@@ -18,6 +18,9 @@ import {
   LayoutDashboard,
   FileText,
   LineChart,
+  Instagram,
+  Twitter,
+  Github,
 } from "lucide-react"
 import {
   NavigationMenu,
