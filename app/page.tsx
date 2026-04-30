@@ -85,14 +85,16 @@ export default function HomePage() {
               </div>
               <span className="text-xl font-bold">StudyTracker</span>
             </Link>
+          </div>
 
-            <NavigationMenu className="hidden md:flex">
+          <nav className="flex items-center gap-4">
+            <NavigationMenu className="hidden md:flex" viewport={false}>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-white/5 data-[state=open]:bg-white/5 transition-colors">
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50 transition-colors">
                     Features
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="z-[100] bg-popover text-popover-foreground shadow-2xl rounded-xl border">
                     <div className="grid w-[600px] gap-8 p-6 md:w-[700px] lg:w-[850px] grid-cols-3">
                       <div className="space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Organize</h4>
@@ -182,9 +184,6 @@ export default function HomePage() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-          </div>
-
-          <nav className="flex items-center gap-4">
             <ThemeToggle />
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <Link href="/auth/login">Sign In</Link>
