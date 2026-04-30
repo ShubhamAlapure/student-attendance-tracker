@@ -473,36 +473,87 @@ export default function HomePage() {
 
             <div className="relative lg:scale-110">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent blur-[120px] opacity-50"></div>
-              <div className="relative rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden aspect-[16/10]">
-                {/* Mockup Dashboard Content */}
-                <div className="p-4 border-b border-white/10 flex items-center gap-4 bg-white/5">
-                  <div className="flex gap-1.5">
-                    <div className="h-3 w-3 rounded-full bg-red-500/50" />
-                    <div className="h-3 w-3 rounded-full bg-yellow-500/50" />
-                    <div className="h-3 w-3 rounded-full bg-green-500/50" />
+              <div className="relative rounded-3xl border border-white/10 bg-[#0A0A0A] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden aspect-[16/10] flex">
+                {/* Real Dashboard Sidebar Mockup */}
+                <div className="w-[20%] border-r border-white/5 bg-black/40 p-4 space-y-6 hidden md:block">
+                  <div className="flex items-center gap-2 mb-8">
+                    <div className="h-6 w-6 rounded bg-primary flex items-center justify-center">
+                      <GraduationCap className="h-4 w-4 text-primary-foreground" />
+                    </div>
+                    <div className="h-3 w-20 rounded bg-white/20" />
                   </div>
-                  <div className="h-6 w-48 rounded-md bg-white/10 animate-pulse" />
+                  <div className="space-y-3">
+                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                      <div key={i} className={`flex items-center gap-3 p-2 rounded-lg ${i === 1 ? 'bg-white/10' : ''}`}>
+                        <div className="h-4 w-4 rounded bg-white/10" />
+                        <div className="h-2 w-16 rounded bg-white/10" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="p-8 space-y-8">
-                  <div className="grid grid-cols-3 gap-6">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="h-32 rounded-2xl bg-white/5 border border-white/10 p-4 space-y-3">
-                        <div className="h-4 w-12 rounded-full bg-primary/20" />
-                        <div className="space-y-2">
-                          <div className="h-3 w-full rounded bg-white/10" />
-                          <div className="h-3 w-2/3 rounded bg-white/10" />
+
+                {/* Real Dashboard Content Mockup */}
+                <div className="flex-1 p-6 space-y-6 overflow-hidden">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="space-y-1">
+                      <div className="h-5 w-32 rounded bg-white/20" />
+                      <div className="h-3 w-48 rounded bg-white/10" />
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="h-8 w-8 rounded-full bg-white/10" />
+                      <div className="h-8 w-8 rounded-full bg-white/20" />
+                    </div>
+                  </div>
+
+                  {/* Stats Cards */}
+                  <div className="grid grid-cols-4 gap-3">
+                    {[
+                      { icon: CheckSquare, color: "text-blue-500", bg: "bg-blue-500/10" },
+                      { icon: BookOpen, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+                      { icon: Calendar, color: "text-amber-500", bg: "bg-amber-500/10" },
+                      { icon: TrendingUp, color: "text-purple-500", bg: "bg-purple-500/10" }
+                    ].map((item, i) => (
+                      <div key={i} className="p-3 rounded-xl bg-white/[0.03] border border-white/5 space-y-3">
+                        <div className="flex justify-between items-start">
+                          <div className="h-2 w-12 rounded bg-white/10" />
+                          <item.icon className={`h-4 w-4 ${item.color}`} />
                         </div>
-                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                          <div className="h-full w-2/3 bg-primary/50" />
+                        <div className="space-y-1">
+                          <div className="h-4 w-8 rounded bg-white/20" />
+                          <div className="h-2 w-16 rounded bg-white/5" />
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="h-48 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-center p-6 space-y-4">
-                    <Brain className="h-12 w-12 text-primary opacity-50" />
-                    <div className="space-y-2">
-                      <div className="h-4 w-48 rounded bg-white/10" />
-                      <div className="h-3 w-32 rounded bg-white/5 mx-auto" />
+
+                  {/* Chart and Tasks */}
+                  <div className="grid grid-cols-5 gap-4 h-full">
+                    <div className="col-span-3 rounded-2xl bg-white/[0.03] border border-white/5 p-4 space-y-4">
+                      <div className="h-3 w-24 rounded bg-white/10" />
+                      <div className="flex items-end gap-2 h-32 pt-4">
+                        {[40, 70, 45, 90, 65, 80, 55].map((h, i) => (
+                          <div 
+                            key={i} 
+                            className="flex-1 rounded-t-sm" 
+                            style={{ 
+                              height: `${h}%`, 
+                              backgroundColor: i === 0 ? '#f59e0b' : i === 1 ? '#10b981' : i === 2 ? '#6366f1' : i === 3 ? '#3b82f6' : i === 4 ? '#8b5cf6' : '#ec4899' 
+                            }} 
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="col-span-2 rounded-2xl bg-white/[0.03] border border-white/5 p-4 space-y-3">
+                      <div className="h-3 w-20 rounded bg-white/10 mb-2" />
+                      {[1, 2, 3].map((i) => (
+                        <div key={i} className="p-2 rounded-lg bg-white/5 border border-white/5 flex items-center gap-3">
+                          <div className="h-4 w-4 rounded-full border border-white/20" />
+                          <div className="space-y-1 flex-1">
+                            <div className="h-2 w-full rounded bg-white/10" />
+                            <div className="h-1.5 w-12 rounded bg-white/5" />
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
