@@ -27,6 +27,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const features = [
   {
@@ -312,6 +318,76 @@ export default function HomePage() {
               </div>
             </div>
           </Card>
+        </section>
+        {/* FAQ Section */}
+        <section className="container mx-auto px-4 py-24 border-t border-white/10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-md">
+                Find answers about StudyTracker, how our AI works, and how we support your academic journey.
+              </p>
+              <Button variant="outline" className="rounded-full px-8" asChild>
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+
+            <div className="space-y-4">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                <AccordionItem value="item-1" className="border rounded-2xl px-6 bg-white/5 dark:bg-white/[0.02] backdrop-blur-sm">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
+                    Will StudyTracker actually help me do better on my exams?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    Yes. StudyTracker builds a personalized study plan from your materials, breaking them into an ordered sequence of topics so you learn things the right way. Instead of guessing what to review, you get flashcards, quizzes, practice tests, and more built from exactly what you need to know.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border rounded-2xl px-6 bg-white/5 dark:bg-white/[0.02] backdrop-blur-sm">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
+                    How does StudyTracker know what I need to study?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    Our AI analyzes your uploaded PDFs, notes, and attendance habits to identify knowledge gaps. It then cross-references your curriculum requirements to ensure you're focusing on the highest-impact topics first.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border rounded-2xl px-6 bg-white/5 dark:bg-white/[0.02] backdrop-blur-sm">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
+                    How do I know if I'm actually learning?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    We provide real-time grade analysis and performance predictions. By visualizing your progress through data, you can see exactly where your understanding is growing and where you might need an extra review session.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border rounded-2xl px-6 bg-white/5 dark:bg-white/[0.02] backdrop-blur-sm">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
+                    What if my exam is tomorrow?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    Don't panic. Our AI Summarizer can take hundreds of pages of textbooks and condense them into high-yield revision notes and flashcards in seconds, allowing you to focus on the essentials during your last-minute study push.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border rounded-2xl px-6 bg-white/5 dark:bg-white/[0.02] backdrop-blur-sm">
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline py-6">
+                    Who uses StudyTracker?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    StudyTracker is designed for students at all levels—from high schoolers looking to stay organized to PhD candidates managing complex research materials. If you have academic goals, StudyTracker is for you.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <div className="flex justify-center pt-8 lg:justify-start">
+                <Button variant="ghost" className="rounded-full text-muted-foreground hover:text-primary">
+                  See more
+                </Button>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
