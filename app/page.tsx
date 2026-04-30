@@ -87,10 +87,10 @@ export default function HomePage() {
       <main className="flex-1">
         <section className="container mx-auto px-4 py-20 text-center relative lg:py-32 overflow-hidden lg:overflow-visible">
           {/* Floating Image 1 - Horizontal Boy */}
-          <div className="absolute top-10 -left-10 hidden xl:block animate-float w-64 h-44 rounded-3xl overflow-hidden z-0 shadow-xl">
-            <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover" />
-            <div className="absolute top-4 left-4 bg-blue-500 rounded-lg p-2 shadow-lg">
-              <CheckSquare className="h-5 w-5 text-white" />
+          <div className="absolute top-10 -left-10 hidden xl:block animate-float w-48 h-32 rounded-2xl overflow-hidden z-0 shadow-xl">
+            <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover scale-105" />
+            <div className="absolute top-2 left-2 bg-blue-500 rounded-lg p-1.5 shadow-lg">
+              <CheckSquare className="h-4 w-4 text-white" />
             </div>
           </div>
 
@@ -103,8 +103,8 @@ export default function HomePage() {
           </div>
 
           {/* Floating Image 3 - Couple */}
-          <div className="absolute bottom-10 -left-24 hidden xl:block animate-float-slow w-64 h-80 rounded-3xl overflow-hidden z-0 shadow-xl">
-            <Image src="/images/float3.png" alt="Couple studying" fill className="object-cover" />
+          <div className="absolute bottom-10 -left-48 hidden xl:block animate-float-slow w-56 h-80 rounded-3xl overflow-hidden z-0 shadow-xl">
+            <Image src="/images/float3.png" alt="Couple studying" fill className="object-cover scale-105" />
             <div className="absolute bottom-10 -right-4 bg-cyan-500 rounded-full p-4 shadow-lg border-4 border-background">
               <ListTodo className="h-8 w-8 text-white" />
             </div>
