@@ -25,6 +25,8 @@ import {
   Building2,
   Globe,
   ShieldCheck,
+  Zap,
+  MessageSquare,
 } from "lucide-react"
 import {
   NavigationMenu,
@@ -246,6 +248,49 @@ export default function HomePage() {
                             </div>
                           </Link>
                         </NavigationMenuLink>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50 transition-colors">
+                    News
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="z-[100] bg-popover text-popover-foreground shadow-2xl rounded-xl border">
+                    <div className="grid w-[500px] gap-6 p-6 md:w-[600px] grid-cols-2">
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <Zap className="h-5 w-5 text-yellow-500 mt-1" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">What's New</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Stay updated with our latest feature releases.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <BookOpen className="h-5 w-5 text-blue-500 mt-1" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">Blog</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Expert study tips and student success stories.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+                      <div className="space-y-4">
+                        <NavigationMenuLink asChild>
+                          <Link href="/auth/sign-up" className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent transition-colors group">
+                            <MessageSquare className="h-5 w-5 text-purple-500 mt-1" />
+                            <div>
+                              <p className="text-sm font-semibold group-hover:text-primary transition-colors">Community</p>
+                              <p className="text-xs text-muted-foreground leading-relaxed">Join thousands of students on our Discord.</p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                          <p className="text-xs font-bold text-primary uppercase mb-2">Editor's Choice</p>
+                          <p className="text-sm font-medium leading-snug">How AI is changing the way we prepare for exams.</p>
+                        </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
