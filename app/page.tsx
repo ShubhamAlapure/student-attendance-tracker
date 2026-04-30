@@ -85,15 +85,15 @@ export default function HomePage() {
 
       <main className="flex-1">
         <section className="container mx-auto px-4 py-20 text-center relative lg:py-32 overflow-hidden lg:overflow-visible">
-          {/* Floating Image 1 */}
-          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-56 h-64 rounded-3xl overflow-hidden z-0">
-            <Image src="/images/float1.png" alt="Student" fill className="object-cover" />
+          {/* Floating Image 1 - Horizontal Boy */}
+          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-72 h-48 rounded-3xl overflow-hidden z-0 shadow-xl">
+            <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover" />
             <div className="absolute top-4 left-4 bg-blue-500 rounded-lg p-2 shadow-lg">
               <CheckSquare className="h-5 w-5 text-white" />
             </div>
           </div>
 
-          {/* Floating Image 2 */}
+          {/* Floating Image 2 - Group */}
           <div className="absolute top-20 -right-20 hidden xl:block animate-float-delayed w-64 h-72 rounded-3xl overflow-hidden z-0">
             <Image src="/images/float2.png" alt="Collaboration" fill className="object-cover" />
             <div className="absolute bottom-6 right-6 bg-emerald-500 rounded-lg p-2 shadow-lg">
@@ -105,11 +105,6 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-1.5 text-sm">
               <Brain className="h-4 w-4" />
               <span>AI-Powered Academic Tracking</span>
-            </div>
-
-            {/* Horizontal Hero Image */}
-            <div className="mx-auto w-64 md:w-80 h-36 md:h-48 relative rounded-3xl overflow-hidden shadow-xl animate-float-slow hidden md:block">
-              <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover" />
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance">
               Track Your Academic Journey with{" "}
