@@ -83,10 +83,10 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
 
       <TabsContent value="input" className="mt-6">
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
+          <Card className="group transition-all duration-300 hover:scale-[1.02] hover:bg-white/5 hover:border-white/30 dark:hover:border-white/20 hover:shadow-2xl bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <FileText className="h-5 w-5 text-blue-500" />
+                <FileText className="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
                 <CardTitle>Paste Notes</CardTitle>
               </div>
               <CardDescription>Paste your lecture notes or textbook snippets here</CardDescription>
@@ -118,10 +118,10 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
             </CardContent>
           </Card>
 
-          <Card className="bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10 border-dashed">
+          <Card className="group transition-all duration-300 hover:scale-[1.02] hover:bg-white/5 hover:border-white/30 dark:hover:border-white/20 hover:shadow-2xl bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10 border-dashed">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <Upload className="h-5 w-5 text-emerald-500" />
+                <Upload className="h-5 w-5 text-emerald-500 transition-transform duration-300 group-hover:scale-110" />
                 <CardTitle>Upload PDF</CardTitle>
               </div>
               <CardDescription>Drag and drop your study PDFs here</CardDescription>
@@ -156,11 +156,11 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
       <TabsContent value="result" className="mt-6">
         {result && (
           <div className="grid gap-6 lg:grid-cols-3">
-            <Card className="lg:col-span-2 bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
+            <Card className="group lg:col-span-2 transition-all duration-300 hover:scale-[1.01] hover:bg-white/5 hover:border-white/30 dark:hover:border-white/20 hover:shadow-2xl bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5 text-indigo-500" />
+                    <BookOpen className="h-5 w-5 text-indigo-500 transition-transform duration-300 group-hover:scale-110" />
                     <CardTitle>AI Summary</CardTitle>
                   </div>
                   <CardDescription>Generated based on your provided material</CardDescription>
@@ -179,10 +179,10 @@ export function AISummarizerClient({ userId }: AISummarizerClientProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
+            <Card className="group transition-all duration-300 hover:scale-[1.02] hover:bg-white/5 hover:border-white/30 dark:hover:border-white/20 hover:shadow-2xl bg-background/40 backdrop-blur-xl border-white/20 dark:border-white/10">
               <CardHeader>
                 <div className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-pink-500" />
+                  <Brain className="h-5 w-5 text-pink-500 transition-transform duration-300 group-hover:scale-110" />
                   <CardTitle>Quick Flashcards</CardTitle>
                 </div>
                 <CardDescription>Key concepts to remember</CardDescription>
