@@ -27,6 +27,8 @@ import {
   ShieldCheck,
   Zap,
   MessageSquare,
+  Play,
+  PartyPopper,
 } from "lucide-react"
 import {
   NavigationMenu,
@@ -410,6 +412,99 @@ export default function HomePage() {
                 {/* Mockup or decorative element can go here */}
                 <div className="relative h-full w-full rounded-3xl border border-white/10 bg-background/40 backdrop-blur-sm shadow-2xl flex items-center justify-center">
                   <Sparkles className="h-24 w-24 text-primary animate-pulse" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Learn Faster Section */}
+        <section className="container mx-auto px-4 py-24 border-t border-white/10 overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
+              <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1.5 text-sm text-orange-500 animate-bounce-slow">
+                <PartyPopper className="h-4 w-4" />
+                <span className="font-semibold tracking-tight">We just hit 2 million users!</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+
+              <div className="space-y-6">
+                <h2 className="text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
+                  Learn Faster... <br />
+                  <span className="bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">Like, a Lot Faster</span>
+                </h2>
+                <p className="text-2xl text-muted-foreground max-w-lg leading-relaxed">
+                  StudyTracker is the #1 AI study tool & note taker — Ace your exams & crush your homework 10x faster.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-6 items-center">
+                <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold bg-gradient-to-r from-orange-600 to-red-500 hover:scale-[1.02] transition-transform shadow-2xl shadow-orange-500/20" asChild>
+                  <Link href="/auth/sign-up">Start Learning Faster</Link>
+                </Button>
+                <Button variant="ghost" size="lg" className="rounded-2xl h-16 px-8 text-lg font-semibold gap-3 hover:bg-white/5" asChild>
+                  <Link href="#">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5">
+                      <Play className="h-5 w-5 fill-current" />
+                    </div>
+                    Demo
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="flex items-center gap-4 pt-4">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="h-10 w-10 rounded-full border-2 border-background bg-muted overflow-hidden">
+                      <Image 
+                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} 
+                        alt="User" 
+                        width={40} 
+                        height={40} 
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm font-medium text-muted-foreground">
+                  Loved by <span className="text-foreground font-bold">2,000,000+</span> students
+                </p>
+              </div>
+            </div>
+
+            <div className="relative lg:scale-110">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent blur-[120px] opacity-50"></div>
+              <div className="relative rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden aspect-[16/10]">
+                {/* Mockup Dashboard Content */}
+                <div className="p-4 border-b border-white/10 flex items-center gap-4 bg-white/5">
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-500/50" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500/50" />
+                    <div className="h-3 w-3 rounded-full bg-green-500/50" />
+                  </div>
+                  <div className="h-6 w-48 rounded-md bg-white/10 animate-pulse" />
+                </div>
+                <div className="p-8 space-y-8">
+                  <div className="grid grid-cols-3 gap-6">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="h-32 rounded-2xl bg-white/5 border border-white/10 p-4 space-y-3">
+                        <div className="h-4 w-12 rounded-full bg-primary/20" />
+                        <div className="space-y-2">
+                          <div className="h-3 w-full rounded bg-white/10" />
+                          <div className="h-3 w-2/3 rounded bg-white/10" />
+                        </div>
+                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                          <div className="h-full w-2/3 bg-primary/50" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="h-48 rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center text-center p-6 space-y-4">
+                    <Brain className="h-12 w-12 text-primary opacity-50" />
+                    <div className="space-y-2">
+                      <div className="h-4 w-48 rounded bg-white/10" />
+                      <div className="h-3 w-32 rounded bg-white/5 mx-auto" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
