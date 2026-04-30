@@ -206,22 +206,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Floating Image 2 - Group */}
-          <div className="absolute top-20 -right-20 hidden xl:block animate-float-delayed w-64 h-72 rounded-3xl overflow-hidden z-0">
-            <Image src="/images/float2.png" alt="Collaboration" fill className="object-cover" />
-            <div className="absolute bottom-6 right-6 bg-emerald-500 rounded-lg p-2 shadow-lg">
-              <TrendingUp className="h-5 w-5 text-white" />
-            </div>
-          </div>
-
-          {/* Floating Image 3 - Couple */}
-          <div className="absolute bottom-10 -left-48 hidden xl:block animate-float-slow w-56 h-80 rounded-3xl overflow-hidden z-0 shadow-xl">
-            <Image src="/images/float3.png" alt="Couple studying" fill className="object-cover scale-105" />
-            <div className="absolute bottom-10 -right-4 bg-cyan-500 rounded-full p-4 shadow-lg border-4 border-background">
-              <ListTodo className="h-8 w-8 text-white" />
-            </div>
-          </div>
-
           <div className="mx-auto max-w-3xl space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 rounded-full border bg-muted px-4 py-1.5 text-sm">
               <Brain className="h-4 w-4" />
