@@ -18,6 +18,7 @@ import {
   LayoutDashboard,
   FileText,
   LineChart,
+  Calendar,
 } from "lucide-react"
 import {
   NavigationMenu,
@@ -93,27 +94,31 @@ export default function HomePage() {
                     Features
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[600px] gap-8 p-6 md:w-[700px] lg:w-[850px] grid-cols-3 bg-background/95 backdrop-blur-xl">
+                    <div className="grid w-[600px] gap-8 p-6 md:w-[700px] lg:w-[850px] grid-cols-3">
                       <div className="space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Organize</h4>
                         <ul className="grid gap-4">
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <ListTodo className="h-5 w-5 text-blue-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">Task Manager</p>
-                                <p className="text-xs text-muted-foreground">Prioritize and track assignments</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <ListTodo className="h-5 w-5 text-blue-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">Task Manager</p>
+                                  <p className="text-xs text-muted-foreground">Prioritize and track assignments</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <Calendar className="h-5 w-5 text-amber-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">Attendance</p>
-                                <p className="text-xs text-muted-foreground">Monitor class consistency</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <Calendar className="h-5 w-5 text-amber-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">Attendance</p>
+                                  <p className="text-xs text-muted-foreground">Monitor class consistency</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
                         </ul>
                       </div>
@@ -121,23 +126,27 @@ export default function HomePage() {
                       <div className="space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Learn</h4>
                         <ul className="grid gap-4">
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <Brain className="h-5 w-5 text-purple-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">AI Summarizer</p>
-                                <p className="text-xs text-muted-foreground">Instant notes from your PDFs</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <Brain className="h-5 w-5 text-purple-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">AI Summarizer</p>
+                                  <p className="text-xs text-muted-foreground">Instant notes from your PDFs</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <Sparkles className="h-5 w-5 text-cyan-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">Study Buddy</p>
-                                <p className="text-xs text-muted-foreground">AI-powered study recommendations</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <Sparkles className="h-5 w-5 text-cyan-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">Study Buddy</p>
+                                  <p className="text-xs text-muted-foreground">AI-powered study recommendations</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
                         </ul>
                       </div>
@@ -145,23 +154,27 @@ export default function HomePage() {
                       <div className="space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Track</h4>
                         <ul className="grid gap-4">
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <LineChart className="h-5 w-5 text-emerald-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">Grade Analysis</p>
-                                <p className="text-xs text-muted-foreground">Visualize your academic trends</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <LineChart className="h-5 w-5 text-emerald-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">Grade Analysis</p>
+                                  <p className="text-xs text-muted-foreground">Visualize your academic trends</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
-                          <li className="group">
-                            <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
-                              <LayoutDashboard className="h-5 w-5 text-rose-500 mt-1" />
-                              <div>
-                                <p className="text-sm font-semibold group-hover:text-primary transition-colors">Dashboard</p>
-                                <p className="text-xs text-muted-foreground">All your stats in one premium view</p>
-                              </div>
-                            </Link>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <Link href="/auth/sign-up" className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent transition-colors group">
+                                <LayoutDashboard className="h-5 w-5 text-rose-500 mt-1" />
+                                <div>
+                                  <p className="text-sm font-semibold group-hover:text-primary transition-colors">Dashboard</p>
+                                  <p className="text-xs text-muted-foreground">All your stats in one premium view</p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
                           </li>
                         </ul>
                       </div>
