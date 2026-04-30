@@ -86,7 +86,7 @@ export default function HomePage() {
       <main className="flex-1">
         <section className="container mx-auto px-4 py-20 text-center relative lg:py-32 overflow-hidden lg:overflow-visible">
           {/* Floating Image 1 - Horizontal Boy */}
-          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-72 h-48 rounded-3xl overflow-hidden z-0 shadow-xl">
+          <div className="absolute top-10 -left-10 hidden xl:block animate-float w-64 h-44 rounded-3xl overflow-hidden z-0 shadow-xl">
             <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover" />
             <div className="absolute top-4 left-4 bg-blue-500 rounded-lg p-2 shadow-lg">
               <CheckSquare className="h-5 w-5 text-white" />
