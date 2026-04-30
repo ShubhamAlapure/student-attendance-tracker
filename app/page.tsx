@@ -12,6 +12,7 @@ import {
   Brain,
   ArrowRight,
   Sparkles,
+  TrendingUp,
 } from "lucide-react"
 
 const features = [
