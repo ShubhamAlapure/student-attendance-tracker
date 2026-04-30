@@ -180,6 +180,7 @@ export default function HomePage() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+              </NavigationMenuList>
             </NavigationMenu>
           </div>
 
