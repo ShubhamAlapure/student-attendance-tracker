@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Sparkles,
   TrendingUp,
+  ListTodo,
 } from "lucide-react"
 
 const features = [
@@ -98,6 +99,14 @@ export default function HomePage() {
             <Image src="/images/float2.png" alt="Collaboration" fill className="object-cover" />
             <div className="absolute bottom-6 right-6 bg-emerald-500 rounded-lg p-2 shadow-lg">
               <TrendingUp className="h-5 w-5 text-white" />
+            </div>
+          </div>
+
+          {/* Floating Image 3 - Couple */}
+          <div className="absolute bottom-10 -left-24 hidden xl:block animate-float-slow w-64 h-80 rounded-3xl overflow-hidden z-0 shadow-xl">
+            <Image src="/images/float3.png" alt="Couple studying" fill className="object-cover" />
+            <div className="absolute bottom-10 -right-4 bg-cyan-500 rounded-full p-4 shadow-lg border-4 border-background">
+              <ListTodo className="h-8 w-8 text-white" />
             </div>
           </div>
 
