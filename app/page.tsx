@@ -269,56 +269,42 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="container mx-auto px-4 py-16">
-          <Card className="overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              <div className="flex flex-col justify-center p-8 md:p-12">
-                <h2 className="text-3xl font-bold tracking-tight">
-                  Ready to Boost Your Academic Performance?
-                </h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  Join thousands of students who are already using StudyTracker to
-                  organize their studies and achieve better results.
-                </p>
-                <div className="mt-8">
-                  <Button size="lg" asChild>
+        <section className="container mx-auto px-4 py-24">
+          <div className="relative overflow-hidden rounded-[3rem] bg-primary/[0.03] dark:bg-white/[0.02] border border-white/10 px-8 py-20 md:px-20 text-center lg:text-left">
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <h2 className="text-5xl font-bold tracking-tight md:text-6xl leading-[1.1]">
+                    Ready to transform how you <span className="text-primary">study?</span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground max-w-md mx-auto lg:mx-0">
+                    Get tips on studying smarter and updates on new AI features to boost your academic performance.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <Button size="lg" className="rounded-full px-8 shadow-xl shadow-primary/20" asChild>
                     <Link href="/auth/sign-up">
-                      Create Free Account
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      Start for Free
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-8 bg-background/50" asChild>
+                    <Link href="/auth/login">
+                      Login
                     </Link>
                   </Button>
                 </div>
               </div>
-              <div className="relative p-8 md:p-12 bg-background/20 backdrop-blur-sm border-l border-white/10 flex flex-col justify-center">
-                <div className="space-y-4 relative z-10">
-                  {[
-                    { step: "1", title: "Create your account", desc: "Sign up in seconds", color: "from-blue-500 to-cyan-400" },
-                    { step: "2", title: "Add your subjects", desc: "Set up your courses", color: "from-purple-500 to-pink-500" },
-                    { step: "3", title: "Track everything", desc: "Tasks, marks, attendance", color: "from-orange-500 to-red-500" },
-                    { step: "4", title: "Get AI insights", desc: "Improve with predictions", color: "from-emerald-500 to-teal-400" },
-                  ].map((item, idx) => (
-                    <div 
-                      key={idx} 
-                      className="group relative flex items-center gap-5 rounded-2xl border border-border/40 bg-background/40 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-background/60 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:border-white/20 dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
-                    >
-                      <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-white font-bold shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
-                        {/* Soft glow effect behind the number */}
-                        <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.color} opacity-40 blur-md transition-opacity duration-300 group-hover:opacity-100`}></div>
-                        <span className="relative z-10 text-xl">{item.step}</span>
-                      </div>
-                      <div>
-                        <p className="text-lg font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                          {item.title}
-                        </p>
-                        <p className="text-sm text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+              <div className="hidden lg:block relative h-[400px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent blur-3xl opacity-50"></div>
+                {/* Mockup or decorative element can go here */}
+                <div className="relative h-full w-full rounded-3xl border border-white/10 bg-background/40 backdrop-blur-sm shadow-2xl flex items-center justify-center">
+                  <Sparkles className="h-24 w-24 text-primary animate-pulse" />
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </section>
+
         {/* FAQ Section */}
         <section className="container mx-auto px-4 py-24 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -391,15 +377,91 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-t py-8">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 sm:flex-row">
-          <div className="flex items-center gap-2">
-            <GraduationCap className="h-5 w-5" />
-            <span className="font-semibold">StudyTracker</span>
+      <footer className="bg-primary/[0.03] dark:bg-white/[0.02] border-t border-white/10 pt-24 pb-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 mb-20">
+            <div className="space-y-4">
+              <h4 className="font-bold text-sm uppercase tracking-wider">Website</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
+                <li><Link href="/auth/login" className="hover:text-primary transition-colors">Login</Link></li>
+                <li><Link href="/auth/sign-up" className="hover:text-primary transition-colors">Sign Up</Link></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="font-bold text-sm uppercase tracking-wider">Company</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="#" className="hover:text-primary transition-colors">Blog</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">FAQ</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">Status</Link></li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-bold text-sm uppercase tracking-wider">Helpful</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/contact" className="hover:text-primary transition-colors">Email Support</Link></li>
+                <li><Link href="/contact" className="hover:text-primary transition-colors">Feedback</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">Documentation</Link></li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-bold text-sm uppercase tracking-wider">Use Cases</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="#" className="hover:text-primary transition-colors">For High School</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">For University</Link></li>
+                <li><Link href="#" className="hover:text-primary transition-colors">For Educators</Link></li>
+              </ul>
+            </div>
+
+            <div className="col-span-2 space-y-4">
+              <h4 className="font-bold text-sm uppercase tracking-wider">Our Features</h4>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><Link href="#" className="hover:text-primary transition-colors">Task Manager</Link></li>
+                  <li><Link href="#" className="hover:text-primary transition-colors">Attendance</Link></li>
+                  <li><Link href="#" className="hover:text-primary transition-colors">Grade Analysis</Link></li>
+                </ul>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><Link href="#" className="hover:text-primary transition-colors">AI Summarizer</Link></li>
+                  <li><Link href="#" className="hover:text-primary transition-colors">Study Buddy</Link></li>
+                  <li><Link href="#" className="hover:text-primary transition-colors">Dashboard</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Built for students, by students. Track smarter, not harder.
-          </p>
+
+          <div className="flex flex-col gap-8 pt-12 border-t border-white/10">
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                  <GraduationCap className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <span className="text-2xl font-bold tracking-tight">StudyTracker</span>
+              </div>
+              
+              <div className="flex items-center gap-6">
+                {[Instagram, Twitter, Github].map((Icon, idx) => (
+                  <Link key={idx} href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Icon className="h-5 w-5" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
+              <p>© {new Date().getFullYear()} StudyTracker Inc. All Rights Reserved.</p>
+              <div className="flex items-center gap-6">
+                <Link href="#" className="hover:text-primary transition-colors underline-offset-4 hover:underline">Privacy</Link>
+                <Link href="#" className="hover:text-primary transition-colors underline-offset-4 hover:underline">Terms</Link>
+                <Link href="#" className="hover:text-primary transition-colors underline-offset-4 hover:underline">Cookies</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
