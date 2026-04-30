@@ -106,6 +106,11 @@ export default function HomePage() {
               <Brain className="h-4 w-4" />
               <span>AI-Powered Academic Tracking</span>
             </div>
+
+            {/* Horizontal Hero Image */}
+            <div className="mx-auto w-64 md:w-80 h-36 md:h-48 relative rounded-3xl overflow-hidden shadow-xl animate-float-slow hidden md:block">
+              <Image src="/images/hero-boy.png" alt="Student learning" fill className="object-cover" />
+            </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance">
               Track Your Academic Journey with{" "}
               <span className="text-primary underline decoration-emerald-500/30 decoration-4 underline-offset-8">Intelligence</span>
