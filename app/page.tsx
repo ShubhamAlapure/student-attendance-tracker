@@ -85,9 +85,7 @@ export default function HomePage() {
               </div>
               <span className="text-xl font-bold">StudyTracker</span>
             </Link>
-          </div>
 
-          <nav className="flex items-center gap-4">
             <NavigationMenu className="hidden md:flex" viewport={false}>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -182,8 +180,10 @@ export default function HomePage() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
             </NavigationMenu>
+          </div>
+
+          <nav className="flex items-center gap-4">
             <ThemeToggle />
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <Link href="/auth/login">Sign In</Link>
