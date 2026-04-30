@@ -251,6 +251,8 @@ export default function HomePage() {
                       </div>
                     </div>
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent hover:bg-accent/50 data-[state=open]:bg-accent/50 transition-colors">
                     News
