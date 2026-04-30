@@ -86,7 +86,7 @@ export default function HomePage() {
       <main className="flex-1">
         <section className="container mx-auto px-4 py-20 text-center relative lg:py-32 overflow-hidden lg:overflow-visible">
           {/* Floating Image 1 */}
-          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-56 h-64 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 rotate-3">
+          <div className="absolute -top-10 -left-10 hidden xl:block animate-float w-56 h-64 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0">
             <Image src="/images/float1.png" alt="Student" fill className="object-cover" />
             <div className="absolute top-4 left-4 bg-blue-500 rounded-lg p-2 shadow-lg">
               <CheckSquare className="h-5 w-5 text-white" />
@@ -94,18 +94,10 @@ export default function HomePage() {
           </div>
 
           {/* Floating Image 2 */}
-          <div className="absolute top-20 -right-20 hidden xl:block animate-float-delayed w-64 h-72 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 -rotate-3">
+          <div className="absolute top-20 -right-20 hidden xl:block animate-float-delayed w-64 h-72 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0">
             <Image src="/images/float2.png" alt="Collaboration" fill className="object-cover" />
             <div className="absolute bottom-6 right-6 bg-emerald-500 rounded-lg p-2 shadow-lg">
               <TrendingUp className="h-5 w-5 text-white" />
-            </div>
-          </div>
-
-          {/* Floating Image 3 */}
-          <div className="absolute -bottom-10 right-1/4 hidden xl:block animate-float-slow w-48 h-56 rounded-3xl overflow-hidden border-8 border-white/10 shadow-2xl z-0 rotate-12">
-            <Image src="/images/float3.png" alt="Dashboard" fill className="object-cover" />
-            <div className="absolute top-1/2 -left-4 bg-pink-500 rounded-full p-3 shadow-lg">
-              <Sparkles className="h-6 w-6 text-white" />
             </div>
           </div>
 
